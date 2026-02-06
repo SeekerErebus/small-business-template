@@ -1,0 +1,327 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout>
+  <!-- Hero -->
+  <section class="relative min-h-[85vh] flex items-center pt-16 bg-stone-900 text-white overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-amber-900/30"></div>
+    <div class="relative max-w-6xl mx-auto px-6 py-20 text-center">
+      <p class="text-amber-500 text-sm font-medium tracking-widest uppercase mb-4">Est. 2024 &middot; Salt Lake City</p>
+      <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
+        The Craft Table
+      </h1>
+      <p class="text-lg text-stone-300 max-w-xl mx-auto mb-8 leading-relaxed">
+        Fresh, locally-sourced ingredients prepared with care. A neighborhood gathering
+        place for great food and good company.
+      </p>
+      <div class="flex flex-wrap justify-center gap-4">
+        <a href="#contact" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium px-8 py-3 rounded-lg transition-colors">
+          Reserve a Table
+        </a>
+        <a href="#menu" class="inline-block border border-stone-600 hover:border-stone-400 text-stone-200 font-medium px-8 py-3 rounded-lg transition-colors">
+          View Menu
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu / Services -->
+  <section id="menu" class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-amber-600 text-sm font-medium tracking-widest uppercase mb-3">Our Menu</p>
+        <h2 class="font-serif text-4xl font-bold text-stone-900 mb-4">Fresh & Seasonal</h2>
+        <p class="text-stone-500 max-w-lg mx-auto">Every dish is crafted with locally-sourced ingredients, prepared daily by our kitchen team.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Starters -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-stone-100">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">Starters</h3>
+          <div class="space-y-5">
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Artisan Bread Board</p>
+                <p class="text-sm text-stone-500">House-baked breads, whipped butter, olive tapenade</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$12</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Seasonal Soup</p>
+                <p class="text-sm text-stone-500">Chef's daily preparation with local vegetables</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$10</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Burrata Salad</p>
+                <p class="text-sm text-stone-500">Heirloom tomatoes, fresh basil, aged balsamic</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$14</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Crispy Calamari</p>
+                <p class="text-sm text-stone-500">Lemon aioli, pickled peppers, fresh herbs</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$13</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Mains -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-stone-100">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">Mains</h3>
+          <div class="space-y-5">
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Pan-Seared Salmon</p>
+                <p class="text-sm text-stone-500">Roasted vegetables, lemon-dill cream sauce</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$28</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Grilled Ribeye</p>
+                <p class="text-sm text-stone-500">Garlic mashed potatoes, seasonal greens</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$34</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Wild Mushroom Risotto</p>
+                <p class="text-sm text-stone-500">Arborio rice, truffle oil, parmesan</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$22</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Craft Burger</p>
+                <p class="text-sm text-stone-500">Wagyu blend, brioche bun, house-cut fries</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$19</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Desserts -->
+        <div class="bg-white rounded-xl p-8 shadow-sm border border-stone-100">
+          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">Desserts</h3>
+          <div class="space-y-5">
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Chocolate Fondant</p>
+                <p class="text-sm text-stone-500">Warm center, vanilla bean ice cream</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$14</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Crème Brûlée</p>
+                <p class="text-sm text-stone-500">Classic vanilla custard, caramelized sugar</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$11</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Seasonal Fruit Tart</p>
+                <p class="text-sm text-stone-500">Pastry cream, fresh fruit, honey glaze</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$12</span>
+            </div>
+            <div class="flex justify-between items-baseline">
+              <div>
+                <p class="font-medium text-stone-800">Artisan Cheese Board</p>
+                <p class="text-sm text-stone-500">Local cheeses, honeycomb, seasonal preserves</p>
+              </div>
+              <span class="text-amber-600 font-medium ml-4 shrink-0">$16</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="py-24 bg-stone-900 text-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12 items-center">
+        <div>
+          <p class="text-amber-500 text-sm font-medium tracking-widest uppercase mb-3">Our Story</p>
+          <h2 class="font-serif text-4xl font-bold mb-6">A Neighborhood Tradition</h2>
+          <p class="text-stone-300 leading-relaxed mb-4">
+            The Craft Table started with a simple idea: serve honest food made with the best
+            local ingredients. Every morning, our team visits local farms and suppliers to
+            hand-select the day's produce, meats, and artisan goods.
+          </p>
+          <p class="text-stone-300 leading-relaxed mb-6">
+            Our menu changes with the seasons because the best food comes from what's fresh
+            right now. Whether you're here for a weekday lunch, a weekend brunch, or a special
+            evening out, we want every visit to feel like coming home.
+          </p>
+          <div class="grid grid-cols-3 gap-6 pt-4 border-t border-stone-700">
+            <div>
+              <p class="font-serif text-3xl font-bold text-amber-500">12+</p>
+              <p class="text-stone-400 text-sm mt-1">Local Farm Partners</p>
+            </div>
+            <div>
+              <p class="font-serif text-3xl font-bold text-amber-500">5</p>
+              <p class="text-stone-400 text-sm mt-1">Years Serving SLC</p>
+            </div>
+            <div>
+              <p class="font-serif text-3xl font-bold text-amber-500">4.8</p>
+              <p class="text-stone-400 text-sm mt-1">Star Rating</p>
+            </div>
+          </div>
+        </div>
+        <div class="bg-stone-800 rounded-xl aspect-square flex items-center justify-center">
+          <span class="text-stone-600 text-sm">Restaurant Photo</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hours & Location -->
+  <section class="py-24">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-12">
+        <div>
+          <p class="text-amber-600 text-sm font-medium tracking-widest uppercase mb-3">Visit Us</p>
+          <h2 class="font-serif text-4xl font-bold text-stone-900 mb-8">Hours & Location</h2>
+          <div class="space-y-4 mb-8">
+            <div class="flex justify-between py-3 border-b border-stone-200">
+              <span class="font-medium text-stone-800">Monday - Thursday</span>
+              <span class="text-stone-500">11:00 AM - 9:00 PM</span>
+            </div>
+            <div class="flex justify-between py-3 border-b border-stone-200">
+              <span class="font-medium text-stone-800">Friday - Saturday</span>
+              <span class="text-stone-500">11:00 AM - 10:00 PM</span>
+            </div>
+            <div class="flex justify-between py-3 border-b border-stone-200">
+              <span class="font-medium text-stone-800">Sunday Brunch</span>
+              <span class="text-stone-500">10:00 AM - 3:00 PM</span>
+            </div>
+          </div>
+          <div class="text-stone-600">
+            <p class="font-medium text-stone-800 mb-1">123 Main Street</p>
+            <p>Salt Lake City, UT 84101</p>
+            <p class="mt-2">(801) 555-0123</p>
+          </div>
+        </div>
+        <!-- Google Maps Embed Placeholder -->
+        <div class="rounded-xl overflow-hidden border border-stone-200 bg-stone-100 flex items-center justify-center min-h-[400px]">
+          <!-- Replace the src below with your actual Google Maps embed URL -->
+          <!-- Example: https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE -->
+          <div class="text-center p-8">
+            <svg class="w-12 h-12 text-stone-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+            </svg>
+            <p class="text-stone-500 text-sm mb-2">Google Maps Embed</p>
+            <p class="text-stone-400 text-xs">Replace this placeholder with an iframe embed from Google Maps</p>
+          </div>
+          <!--
+          <iframe
+            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
+            width="100%"
+            height="100%"
+            style="border:0; min-height:400px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Restaurant Location">
+          </iframe>
+          -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Form -->
+  <section id="contact" class="py-24 bg-stone-100">
+    <div class="max-w-2xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <p class="text-amber-600 text-sm font-medium tracking-widest uppercase mb-3">Reservations</p>
+        <h2 class="font-serif text-4xl font-bold text-stone-900 mb-4">Book a Table</h2>
+        <p class="text-stone-500">Fill out the form below and we'll confirm your reservation within a few hours.</p>
+      </div>
+
+      <!-- Formspree form — replace YOUR_FORM_ID with actual Formspree endpoint -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white rounded-xl p-8 shadow-sm border border-stone-200 space-y-6">
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-stone-700 mb-2">Name</label>
+            <input type="text" id="name" name="name" required
+              class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="Your name" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email</label>
+            <input type="email" id="email" name="email" required
+              class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="your@email.com" />
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-6">
+          <div>
+            <label for="date" class="block text-sm font-medium text-stone-700 mb-2">Date</label>
+            <input type="date" id="date" name="date" required
+              class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" />
+          </div>
+          <div>
+            <label for="guests" class="block text-sm font-medium text-stone-700 mb-2">Guests</label>
+            <select id="guests" name="guests" required
+              class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
+              <option value="">Select</option>
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3-4">3-4 Guests</option>
+              <option value="5-6">5-6 Guests</option>
+              <option value="7+">7+ Guests</option>
+            </select>
+          </div>
+        </div>
+        <div>
+          <label for="message" class="block text-sm font-medium text-stone-700 mb-2">Special Requests</label>
+          <textarea id="message" name="message" rows="3"
+            class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none" placeholder="Dietary restrictions, special occasions, etc."></textarea>
+        </div>
+        <button type="submit"
+          class="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-lg transition-colors">
+          Request Reservation
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-stone-900 text-stone-400 py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid sm:grid-cols-3 gap-8 mb-8">
+        <div>
+          <h4 class="font-serif text-lg font-semibold text-white mb-3">The Craft Table</h4>
+          <p class="text-sm leading-relaxed">Fresh, locally-sourced cuisine in the heart of Salt Lake City.</p>
+        </div>
+        <div>
+          <h4 class="font-medium text-white mb-3">Quick Links</h4>
+          <div class="space-y-2 text-sm">
+            <a href="#menu" class="block hover:text-white transition-colors">Menu</a>
+            <a href="#about" class="block hover:text-white transition-colors">About</a>
+            <a href="#contact" class="block hover:text-white transition-colors">Reservations</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-medium text-white mb-3">Connect</h4>
+          <div class="space-y-2 text-sm">
+            <a href="#" class="block hover:text-white transition-colors">Instagram</a>
+            <a href="#" class="block hover:text-white transition-colors">Facebook</a>
+            <a href="#" class="block hover:text-white transition-colors">Yelp</a>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-stone-800 pt-8 text-center text-sm">
+        <p>&copy; 2026 The Craft Table. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+</Layout>
