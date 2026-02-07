@@ -4,275 +4,410 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout>
   <!-- Hero -->
-  <section class="relative min-h-[85vh] flex items-center pt-16 bg-stone-900 text-white overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-800 to-amber-900/30"></div>
-    <div class="relative max-w-6xl mx-auto px-6 py-20 text-center">
-      <p class="text-amber-500 text-sm font-medium tracking-widest uppercase mb-4">Est. 2024 &middot; Salt Lake City</p>
-      <h1 class="font-serif text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight mb-6">
-        The Craft Table
+  <section class="relative min-h-screen flex items-center pt-16 bg-stone-900 text-white overflow-hidden">
+    <!-- Layered background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-stone-950 via-stone-900 to-stone-800"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-stone-900/80 via-transparent to-stone-900/40"></div>
+    <!-- Warm amber glow -->
+    <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-amber-600/8 rounded-full blur-3xl"></div>
+    <!-- Grain overlay -->
+    <div class="grain-overlay"></div>
+    <!-- Decorative corner elements -->
+    <div class="absolute top-24 left-8 w-20 h-20 border-l border-t border-amber-500/20 hidden lg:block"></div>
+    <div class="absolute bottom-12 right-8 w-20 h-20 border-r border-b border-amber-500/20 hidden lg:block"></div>
+
+    <div class="relative max-w-5xl mx-auto px-6 py-24 sm:py-32 text-center">
+      <!-- Ornamental top -->
+      <div class="ornament mb-8 animate-fade-in" style="animation-delay: 0.1s;">
+        <svg class="w-4 h-4" viewBox="0 0 16 16" fill="currentColor">
+          <path d="M8 0l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/>
+        </svg>
+      </div>
+
+      <p class="text-amber-400/90 text-xs sm:text-sm font-medium tracking-[0.25em] uppercase mb-6 animate-fade-up" style="animation-delay: 0.2s;">
+        Est. 2024 &middot; Salt Lake City, Utah
+      </p>
+
+      <h1 class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold leading-[1.05] mb-6 animate-fade-up" style="animation-delay: 0.35s;">
+        The Craft<br class="sm:hidden" /> Table
       </h1>
-      <p class="text-lg text-stone-300 max-w-xl mx-auto mb-8 leading-relaxed">
+
+      <div class="w-16 h-px bg-gradient-to-r from-transparent via-amber-500 to-transparent mx-auto mb-6 animate-fade-in" style="animation-delay: 0.5s;"></div>
+
+      <p class="text-base sm:text-lg text-stone-300/90 max-w-lg mx-auto mb-10 leading-relaxed font-light animate-fade-up" style="animation-delay: 0.5s;">
         Fresh, locally-sourced ingredients prepared with care. A neighborhood gathering
         place for great food and good company.
       </p>
-      <div class="flex flex-wrap justify-center gap-4">
-        <a href="#contact" class="inline-block bg-amber-600 hover:bg-amber-700 text-white font-medium px-8 py-3 rounded-lg transition-colors">
+
+      <div class="flex flex-col sm:flex-row justify-center gap-4 animate-fade-up" style="animation-delay: 0.65s;">
+        <a href="#contact" class="btn-primary text-white font-medium px-8 py-3.5 rounded-lg text-sm tracking-wide">
           Reserve a Table
         </a>
-        <a href="#menu" class="inline-block border border-stone-600 hover:border-stone-400 text-stone-200 font-medium px-8 py-3 rounded-lg transition-colors">
-          View Menu
+        <a href="#menu" class="btn-outline text-stone-200 font-medium px-8 py-3.5 rounded-lg text-sm tracking-wide">
+          View Our Menu
         </a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-fade-in" style="animation-delay: 1.2s;">
+        <div class="flex flex-col items-center gap-2 text-stone-500">
+          <span class="text-[10px] tracking-[0.2em] uppercase">Scroll</span>
+          <div class="w-px h-8 bg-gradient-to-b from-stone-500 to-transparent"></div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Section divider -->
+  <div class="section-divider"></div>
+
   <!-- Menu / Services -->
-  <section id="menu" class="py-24">
+  <section id="menu" class="py-24 sm:py-32 bg-cream">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="text-center mb-16">
-        <p class="text-amber-600 text-sm font-medium tracking-widest uppercase mb-3">Our Menu</p>
-        <h2 class="font-serif text-4xl font-bold text-stone-900 mb-4">Fresh & Seasonal</h2>
-        <p class="text-stone-500 max-w-lg mx-auto">Every dish is crafted with locally-sourced ingredients, prepared daily by our kitchen team.</p>
+      <div class="text-center mb-16 sm:mb-20 reveal">
+        <p class="text-amber-600 text-xs font-semibold tracking-[0.25em] uppercase mb-4">Our Menu</p>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 mb-5">Fresh & Seasonal</h2>
+        <div class="ornament mb-5">
+          <svg class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/>
+          </svg>
+        </div>
+        <p class="text-stone-500 max-w-md mx-auto leading-relaxed">Every dish is crafted with locally-sourced ingredients, prepared daily by our kitchen team.</p>
       </div>
 
-      <div class="grid md:grid-cols-3 gap-8">
+      <div class="grid md:grid-cols-3 gap-6 lg:gap-8 stagger-children">
         <!-- Starters -->
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-stone-100">
-          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">Starters</h3>
-          <div class="space-y-5">
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Artisan Bread Board</p>
-                <p class="text-sm text-stone-500">House-baked breads, whipped butter, olive tapenade</p>
-              </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$12</span>
+        <div class="reveal card-hover bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-stone-100/80">
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-50 mb-4">
+              <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 8.25v-1.5m-6 1.5v-1.5m12 9.75l-1.5.75a3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0 3.354 3.354 0 00-3 0 3.354 3.354 0 01-3 0L3 16.5m15-3.379a48.474 48.474 0 00-6-.371c-2.032 0-4.034.126-6 .371m12 0c.39.049.777.102 1.163.16 1.07.16 1.837 1.094 1.837 2.175v5.169c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 013 20.625v-5.17c0-1.08.768-2.014 1.837-2.174A47.78 47.78 0 016 13.12M12.265 3.11a.375.375 0 11-.53 0L12 2.845l.265.265zm-3 0a.375.375 0 11-.53 0L9 2.845l.265.265zm6 0a.375.375 0 11-.53 0L15 2.845l.265.265z" />
+              </svg>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Seasonal Soup</p>
-                <p class="text-sm text-stone-500">Chef's daily preparation with local vegetables</p>
+            <h3 class="font-serif text-2xl font-semibold text-stone-900">Starters</h3>
+          </div>
+          <div class="space-y-1">
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Artisan Bread Board</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">House-baked breads, whipped butter, olive tapenade</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$10</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$12</span>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Burrata Salad</p>
-                <p class="text-sm text-stone-500">Heirloom tomatoes, fresh basil, aged balsamic</p>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Seasonal Soup</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Chef's daily preparation with local vegetables</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$14</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$10</span>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Crispy Calamari</p>
-                <p class="text-sm text-stone-500">Lemon aioli, pickled peppers, fresh herbs</p>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Burrata Salad</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Heirloom tomatoes, fresh basil, aged balsamic</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$13</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$14</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Crispy Calamari</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Lemon aioli, pickled peppers, fresh herbs</p>
+              </div>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$13</span>
             </div>
           </div>
         </div>
 
         <!-- Mains -->
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-stone-100">
-          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">Mains</h3>
-          <div class="space-y-5">
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Pan-Seared Salmon</p>
-                <p class="text-sm text-stone-500">Roasted vegetables, lemon-dill cream sauce</p>
-              </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$28</span>
+        <div class="reveal card-hover bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-stone-100/80 md:-mt-4 relative">
+          <!-- Highlighted / featured card -->
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 hidden md:block">
+            <span class="bg-amber-600 text-white text-[10px] font-semibold tracking-[0.15em] uppercase px-3 py-1 rounded-full">Popular</span>
+          </div>
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-50 mb-4">
+              <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.362 5.214A8.252 8.252 0 0112 21 8.25 8.25 0 016.038 7.048 8.287 8.287 0 009 9.6a8.983 8.983 0 013.361-6.867 8.21 8.21 0 003 2.48z" />
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 18a3.75 3.75 0 00.495-7.467 5.99 5.99 0 00-1.925 3.546 5.974 5.974 0 01-2.133-1A3.75 3.75 0 0012 18z" />
+              </svg>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Grilled Ribeye</p>
-                <p class="text-sm text-stone-500">Garlic mashed potatoes, seasonal greens</p>
+            <h3 class="font-serif text-2xl font-semibold text-stone-900">Mains</h3>
+          </div>
+          <div class="space-y-1">
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Pan-Seared Salmon</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Roasted vegetables, lemon-dill cream sauce</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$34</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$28</span>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Wild Mushroom Risotto</p>
-                <p class="text-sm text-stone-500">Arborio rice, truffle oil, parmesan</p>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Grilled Ribeye</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Garlic mashed potatoes, seasonal greens</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$22</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$34</span>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Craft Burger</p>
-                <p class="text-sm text-stone-500">Wagyu blend, brioche bun, house-cut fries</p>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Wild Mushroom Risotto</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Arborio rice, truffle oil, parmesan</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$19</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$22</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Craft Burger</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Wagyu blend, brioche bun, house-cut fries</p>
+              </div>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$19</span>
             </div>
           </div>
         </div>
 
         <!-- Desserts -->
-        <div class="bg-white rounded-xl p-8 shadow-sm border border-stone-100">
-          <h3 class="font-serif text-2xl font-semibold text-stone-900 mb-6 text-center">Desserts</h3>
-          <div class="space-y-5">
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Chocolate Fondant</p>
-                <p class="text-sm text-stone-500">Warm center, vanilla bean ice cream</p>
-              </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$14</span>
+        <div class="reveal card-hover bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-stone-100/80">
+          <div class="text-center mb-8">
+            <div class="inline-flex items-center justify-center w-12 h-12 rounded-full bg-amber-50 mb-4">
+              <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z" />
+              </svg>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Crème Brûlée</p>
-                <p class="text-sm text-stone-500">Classic vanilla custard, caramelized sugar</p>
+            <h3 class="font-serif text-2xl font-semibold text-stone-900">Desserts</h3>
+          </div>
+          <div class="space-y-1">
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Chocolate Fondant</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Warm center, vanilla bean ice cream</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$11</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$14</span>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Seasonal Fruit Tart</p>
-                <p class="text-sm text-stone-500">Pastry cream, fresh fruit, honey glaze</p>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Creme Brulee</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Classic vanilla custard, caramelized sugar</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$12</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$11</span>
             </div>
-            <div class="flex justify-between items-baseline">
-              <div>
-                <p class="font-medium text-stone-800">Artisan Cheese Board</p>
-                <p class="text-sm text-stone-500">Local cheeses, honeycomb, seasonal preserves</p>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Seasonal Fruit Tart</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Pastry cream, fresh fruit, honey glaze</p>
               </div>
-              <span class="text-amber-600 font-medium ml-4 shrink-0">$16</span>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$12</span>
+            </div>
+            <div class="menu-item flex justify-between items-baseline gap-3">
+              <div class="min-w-0">
+                <p class="font-medium text-stone-800 text-[15px]">Artisan Cheese Board</p>
+                <p class="text-sm text-stone-400 mt-0.5 leading-relaxed">Local cheeses, honeycomb, seasonal preserves</p>
+              </div>
+              <span class="text-amber-600 font-semibold text-sm shrink-0">$16</span>
             </div>
           </div>
         </div>
+      </div>
+
+      <!-- Menu footnote -->
+      <div class="text-center mt-12 reveal">
+        <p class="text-stone-400 text-sm italic">Menu changes seasonally. Please inform your server of any dietary restrictions.</p>
       </div>
     </div>
   </section>
 
   <!-- About -->
-  <section id="about" class="py-24 bg-stone-900 text-white">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12 items-center">
-        <div>
-          <p class="text-amber-500 text-sm font-medium tracking-widest uppercase mb-3">Our Story</p>
-          <h2 class="font-serif text-4xl font-bold mb-6">A Neighborhood Tradition</h2>
-          <p class="text-stone-300 leading-relaxed mb-4">
-            The Craft Table started with a simple idea: serve honest food made with the best
-            local ingredients. Every morning, our team visits local farms and suppliers to
-            hand-select the day's produce, meats, and artisan goods.
-          </p>
-          <p class="text-stone-300 leading-relaxed mb-6">
-            Our menu changes with the seasons because the best food comes from what's fresh
-            right now. Whether you're here for a weekday lunch, a weekend brunch, or a special
-            evening out, we want every visit to feel like coming home.
-          </p>
-          <div class="grid grid-cols-3 gap-6 pt-4 border-t border-stone-700">
-            <div>
-              <p class="font-serif text-3xl font-bold text-amber-500">12+</p>
-              <p class="text-stone-400 text-sm mt-1">Local Farm Partners</p>
+  <section id="about" class="relative py-24 sm:py-32 bg-stone-900 text-white overflow-hidden">
+    <!-- Subtle background texture -->
+    <div class="absolute inset-0 bg-gradient-to-br from-stone-900 via-stone-900 to-stone-800"></div>
+    <div class="grain-overlay"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+        <div class="reveal">
+          <p class="text-amber-400/90 text-xs font-semibold tracking-[0.25em] uppercase mb-4">Our Story</p>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 leading-tight">A Neighborhood<br />Tradition</h2>
+
+          <div class="space-y-5 mb-10">
+            <p class="text-stone-300/90 leading-relaxed font-light">
+              The Craft Table started with a simple idea: serve honest food made with the best
+              local ingredients. Every morning, our team visits local farms and suppliers to
+              hand-select the day's produce, meats, and artisan goods.
+            </p>
+            <p class="text-stone-300/90 leading-relaxed font-light">
+              Our menu changes with the seasons because the best food comes from what's fresh
+              right now. Whether you're here for a weekday lunch, a weekend brunch, or a special
+              evening out, we want every visit to feel like coming home.
+            </p>
+          </div>
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-8 pt-8 border-t border-stone-700/60">
+            <div class="reveal">
+              <p class="font-serif text-3xl sm:text-4xl font-bold stat-number">12+</p>
+              <p class="text-stone-400 text-xs sm:text-sm mt-2 tracking-wide">Local Farm<br/>Partners</p>
             </div>
-            <div>
-              <p class="font-serif text-3xl font-bold text-amber-500">5</p>
-              <p class="text-stone-400 text-sm mt-1">Years Serving SLC</p>
+            <div class="reveal">
+              <p class="font-serif text-3xl sm:text-4xl font-bold stat-number">5</p>
+              <p class="text-stone-400 text-xs sm:text-sm mt-2 tracking-wide">Years Serving<br/>Salt Lake City</p>
             </div>
-            <div>
-              <p class="font-serif text-3xl font-bold text-amber-500">4.8</p>
-              <p class="text-stone-400 text-sm mt-1">Star Rating</p>
+            <div class="reveal">
+              <p class="font-serif text-3xl sm:text-4xl font-bold stat-number">4.8</p>
+              <p class="text-stone-400 text-xs sm:text-sm mt-2 tracking-wide">Star Rating<br/>on Google</p>
             </div>
           </div>
         </div>
-        <div class="bg-stone-800 rounded-xl aspect-square flex items-center justify-center">
-          <span class="text-stone-600 text-sm">Restaurant Photo</span>
+
+        <!-- Image placeholder -->
+        <div class="reveal">
+          <div class="image-placeholder rounded-2xl aspect-[4/5] lg:aspect-square flex flex-col items-center justify-center">
+            <svg class="w-16 h-16 text-stone-600/60 mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909M3.75 21h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v13.5A1.5 1.5 0 003.75 21zm14.25-15.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0z" />
+            </svg>
+            <span class="text-stone-500/60 text-sm font-medium tracking-wide">Restaurant Interior</span>
+            <span class="text-stone-600/40 text-xs mt-1">Replace with your photo</span>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial banner -->
+  <section class="py-16 sm:py-20 bg-amber-50 border-y border-amber-100">
+    <div class="max-w-3xl mx-auto px-6 text-center reveal">
+      <svg class="w-8 h-8 text-amber-400 mx-auto mb-6" fill="currentColor" viewBox="0 0 24 24">
+        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+      </svg>
+      <blockquote class="font-serif text-xl sm:text-2xl lg:text-3xl text-stone-800 leading-relaxed mb-6 italic">
+        The best farm-to-table experience in Salt Lake City. Every dish tells a story of local craftsmanship.
+      </blockquote>
+      <div>
+        <p class="text-stone-700 font-medium text-sm">Salt Lake Tribune</p>
+        <p class="text-stone-400 text-xs mt-1">Restaurant Review, 2024</p>
       </div>
     </div>
   </section>
 
   <!-- Hours & Location -->
-  <section class="py-24">
+  <section id="hours" class="py-24 sm:py-32 bg-cream">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid md:grid-cols-2 gap-12">
-        <div>
-          <p class="text-amber-600 text-sm font-medium tracking-widest uppercase mb-3">Visit Us</p>
-          <h2 class="font-serif text-4xl font-bold text-stone-900 mb-8">Hours & Location</h2>
-          <div class="space-y-4 mb-8">
-            <div class="flex justify-between py-3 border-b border-stone-200">
-              <span class="font-medium text-stone-800">Monday - Thursday</span>
-              <span class="text-stone-500">11:00 AM - 9:00 PM</span>
+      <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
+        <div class="reveal">
+          <p class="text-amber-600 text-xs font-semibold tracking-[0.25em] uppercase mb-4">Visit Us</p>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 mb-10 leading-tight">Hours &<br/>Location</h2>
+
+          <!-- Hours -->
+          <div class="space-y-2 mb-10">
+            <div class="hours-row flex justify-between items-center border-b border-stone-200/60">
+              <span class="font-medium text-stone-800 text-[15px]">Monday &ndash; Thursday</span>
+              <span class="text-stone-500 text-sm">11:00 AM &ndash; 9:00 PM</span>
             </div>
-            <div class="flex justify-between py-3 border-b border-stone-200">
-              <span class="font-medium text-stone-800">Friday - Saturday</span>
-              <span class="text-stone-500">11:00 AM - 10:00 PM</span>
+            <div class="hours-row flex justify-between items-center border-b border-stone-200/60">
+              <span class="font-medium text-stone-800 text-[15px]">Friday &ndash; Saturday</span>
+              <span class="text-stone-500 text-sm">11:00 AM &ndash; 10:00 PM</span>
             </div>
-            <div class="flex justify-between py-3 border-b border-stone-200">
-              <span class="font-medium text-stone-800">Sunday Brunch</span>
-              <span class="text-stone-500">10:00 AM - 3:00 PM</span>
+            <div class="hours-row flex justify-between items-center border-b border-stone-200/60">
+              <span class="font-medium text-stone-800 text-[15px]">Sunday Brunch</span>
+              <span class="text-stone-500 text-sm">10:00 AM &ndash; 3:00 PM</span>
             </div>
           </div>
-          <div class="text-stone-600">
-            <p class="font-medium text-stone-800 mb-1">123 Main Street</p>
-            <p>Salt Lake City, UT 84101</p>
-            <p class="mt-2">(801) 555-0123</p>
+
+          <!-- Address -->
+          <div class="bg-white rounded-xl p-6 border border-stone-100 shadow-sm">
+            <div class="flex items-start gap-4">
+              <div class="shrink-0 w-10 h-10 rounded-lg bg-amber-50 flex items-center justify-center mt-0.5">
+                <svg class="w-5 h-5 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+              </div>
+              <div>
+                <p class="font-semibold text-stone-900 mb-1">123 Main Street</p>
+                <p class="text-stone-500 text-sm">Salt Lake City, UT 84101</p>
+                <a href="tel:+18015550123" class="inline-flex items-center gap-1.5 text-amber-600 hover:text-amber-700 text-sm font-medium mt-3 transition-colors">
+                  <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                  </svg>
+                  (801) 555-0123
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+
         <!-- Google Maps Embed Placeholder -->
-        <div class="rounded-xl overflow-hidden border border-stone-200 bg-stone-100 flex items-center justify-center min-h-[400px]">
-          <!-- Replace the src below with your actual Google Maps embed URL -->
-          <!-- Example: https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE -->
-          <div class="text-center p-8">
-            <svg class="w-12 h-12 text-stone-400 mx-auto mb-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
-              <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-            </svg>
-            <p class="text-stone-500 text-sm mb-2">Google Maps Embed</p>
-            <p class="text-stone-400 text-xs">Replace this placeholder with an iframe embed from Google Maps</p>
+        <div class="reveal">
+          <div class="map-placeholder rounded-2xl overflow-hidden border border-stone-200/80 min-h-[400px] lg:min-h-full flex items-center justify-center shadow-sm">
+            <!-- Replace the content below with your actual Google Maps embed iframe -->
+            <div class="text-center p-8 relative z-10">
+              <div class="inline-flex items-center justify-center w-14 h-14 rounded-full bg-white/80 backdrop-blur-sm shadow-sm mb-5">
+                <svg class="w-6 h-6 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                </svg>
+              </div>
+              <p class="text-stone-600 text-sm font-medium mb-1">Map Embed Area</p>
+              <p class="text-stone-400 text-xs max-w-[200px] mx-auto leading-relaxed">Replace with a Google Maps iframe for your business location</p>
+            </div>
+            <!--
+            <iframe
+              src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
+              width="100%"
+              height="100%"
+              style="border:0; min-height:400px;"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Restaurant Location">
+            </iframe>
+            -->
           </div>
-          <!--
-          <iframe
-            src="https://www.google.com/maps/embed?pb=YOUR_EMBED_CODE"
-            width="100%"
-            height="100%"
-            style="border:0; min-height:400px;"
-            allowfullscreen=""
-            loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
-            title="Restaurant Location">
-          </iframe>
-          -->
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Section divider -->
+  <div class="section-divider"></div>
+
   <!-- Contact Form -->
-  <section id="contact" class="py-24 bg-stone-100">
+  <section id="contact" class="py-24 sm:py-32 bg-warm-white">
     <div class="max-w-2xl mx-auto px-6">
-      <div class="text-center mb-12">
-        <p class="text-amber-600 text-sm font-medium tracking-widest uppercase mb-3">Reservations</p>
-        <h2 class="font-serif text-4xl font-bold text-stone-900 mb-4">Book a Table</h2>
-        <p class="text-stone-500">Fill out the form below and we'll confirm your reservation within a few hours.</p>
+      <div class="text-center mb-12 sm:mb-16 reveal">
+        <p class="text-amber-600 text-xs font-semibold tracking-[0.25em] uppercase mb-4">Reservations</p>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-stone-900 mb-5">Book a Table</h2>
+        <div class="ornament mb-5">
+          <svg class="w-3 h-3" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M8 0l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"/>
+          </svg>
+        </div>
+        <p class="text-stone-500 max-w-md mx-auto leading-relaxed">Fill out the form below and we'll confirm your reservation within a few hours.</p>
       </div>
 
-      <!-- Formspree form — replace YOUR_FORM_ID with actual Formspree endpoint -->
-      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="bg-white rounded-xl p-8 shadow-sm border border-stone-200 space-y-6">
+      <!-- Formspree form -- replace YOUR_FORM_ID with actual Formspree endpoint -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="reveal bg-white rounded-2xl p-8 sm:p-10 shadow-sm border border-stone-100/80 space-y-6">
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
-            <label for="name" class="block text-sm font-medium text-stone-700 mb-2">Name</label>
+            <label for="name" class="block text-sm font-medium text-stone-700 mb-2.5">Name</label>
             <input type="text" id="name" name="name" required
-              class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="Your name" />
+              class="form-input w-full px-4 py-3 rounded-xl border border-stone-200 text-stone-800 placeholder-stone-400 focus:outline-none" placeholder="Your name" />
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium text-stone-700 mb-2">Email</label>
+            <label for="email" class="block text-sm font-medium text-stone-700 mb-2.5">Email</label>
             <input type="email" id="email" name="email" required
-              class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" placeholder="your@email.com" />
+              class="form-input w-full px-4 py-3 rounded-xl border border-stone-200 text-stone-800 placeholder-stone-400 focus:outline-none" placeholder="your@email.com" />
           </div>
         </div>
         <div class="grid sm:grid-cols-2 gap-6">
           <div>
-            <label for="date" class="block text-sm font-medium text-stone-700 mb-2">Date</label>
+            <label for="date" class="block text-sm font-medium text-stone-700 mb-2.5">Date</label>
             <input type="date" id="date" name="date" required
-              class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent" />
+              class="form-input w-full px-4 py-3 rounded-xl border border-stone-200 text-stone-800 focus:outline-none" />
           </div>
           <div>
-            <label for="guests" class="block text-sm font-medium text-stone-700 mb-2">Guests</label>
+            <label for="guests" class="block text-sm font-medium text-stone-700 mb-2.5">Guests</label>
             <select id="guests" name="guests" required
-              class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent">
-              <option value="">Select</option>
+              class="form-input w-full px-4 py-3 rounded-xl border border-stone-200 text-stone-800 focus:outline-none appearance-none bg-[url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22%2378716c%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20d%3D%22M5.293%207.293a1%201%200%20011.414%200L10%2010.586l3.293-3.293a1%201%200%20111.414%201.414l-4%204a1%201%200%2001-1.414%200l-4-4a1%201%200%20010-1.414z%22%20clip-rule%3D%22evenodd%22%2F%3E%3C%2Fsvg%3E')] bg-[length:20px] bg-[right_12px_center] bg-no-repeat pr-10">
+              <option value="">Select party size</option>
               <option value="1">1 Guest</option>
               <option value="2">2 Guests</option>
               <option value="3-4">3-4 Guests</option>
@@ -282,45 +417,68 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
         <div>
-          <label for="message" class="block text-sm font-medium text-stone-700 mb-2">Special Requests</label>
+          <label for="message" class="block text-sm font-medium text-stone-700 mb-2.5">Special Requests</label>
           <textarea id="message" name="message" rows="3"
-            class="w-full px-4 py-3 rounded-lg border border-stone-300 text-stone-800 placeholder-stone-400 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:border-transparent resize-none" placeholder="Dietary restrictions, special occasions, etc."></textarea>
+            class="form-input w-full px-4 py-3 rounded-xl border border-stone-200 text-stone-800 placeholder-stone-400 focus:outline-none resize-none" placeholder="Dietary restrictions, special occasions, seating preferences..."></textarea>
         </div>
         <button type="submit"
-          class="w-full bg-amber-600 hover:bg-amber-700 text-white font-medium py-3 rounded-lg transition-colors">
+          class="w-full btn-primary text-white font-medium py-3.5 rounded-xl text-sm tracking-wide">
           Request Reservation
         </button>
+        <p class="text-center text-stone-400 text-xs">We'll respond within 2 hours during business hours.</p>
       </form>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-stone-900 text-stone-400 py-12">
-    <div class="max-w-6xl mx-auto px-6">
-      <div class="grid sm:grid-cols-3 gap-8 mb-8">
-        <div>
-          <h4 class="font-serif text-lg font-semibold text-white mb-3">The Craft Table</h4>
-          <p class="text-sm leading-relaxed">Fresh, locally-sourced cuisine in the heart of Salt Lake City.</p>
+  <footer class="relative bg-stone-900 text-stone-400 overflow-hidden">
+    <div class="grain-overlay"></div>
+    <!-- Warm top edge gradient -->
+    <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-amber-600/30 to-transparent"></div>
+
+    <div class="relative max-w-6xl mx-auto px-6 pt-16 sm:pt-20 pb-8">
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+        <!-- Brand -->
+        <div class="sm:col-span-2 lg:col-span-1">
+          <h4 class="font-serif text-xl font-bold text-white mb-4">The Craft Table</h4>
+          <p class="text-sm leading-relaxed text-stone-400/90 max-w-xs">Fresh, locally-sourced cuisine in the heart of Salt Lake City. A neighborhood tradition since 2019.</p>
         </div>
+
+        <!-- Navigation -->
         <div>
-          <h4 class="font-medium text-white mb-3">Quick Links</h4>
-          <div class="space-y-2 text-sm">
-            <a href="#menu" class="block hover:text-white transition-colors">Menu</a>
-            <a href="#about" class="block hover:text-white transition-colors">About</a>
-            <a href="#contact" class="block hover:text-white transition-colors">Reservations</a>
+          <h4 class="text-xs font-semibold tracking-[0.15em] uppercase text-stone-300 mb-5">Navigate</h4>
+          <div class="space-y-3 text-sm">
+            <a href="#menu" class="block footer-link text-stone-400 hover:text-white">Menu</a>
+            <a href="#about" class="block footer-link text-stone-400 hover:text-white">Our Story</a>
+            <a href="#hours" class="block footer-link text-stone-400 hover:text-white">Hours & Location</a>
+            <a href="#contact" class="block footer-link text-stone-400 hover:text-white">Reservations</a>
           </div>
         </div>
+
+        <!-- Connect -->
         <div>
-          <h4 class="font-medium text-white mb-3">Connect</h4>
-          <div class="space-y-2 text-sm">
-            <a href="#" class="block hover:text-white transition-colors">Instagram</a>
-            <a href="#" class="block hover:text-white transition-colors">Facebook</a>
-            <a href="#" class="block hover:text-white transition-colors">Yelp</a>
+          <h4 class="text-xs font-semibold tracking-[0.15em] uppercase text-stone-300 mb-5">Connect</h4>
+          <div class="space-y-3 text-sm">
+            <a href="#" class="block footer-link text-stone-400 hover:text-white">Instagram</a>
+            <a href="#" class="block footer-link text-stone-400 hover:text-white">Facebook</a>
+            <a href="#" class="block footer-link text-stone-400 hover:text-white">Yelp</a>
+          </div>
+        </div>
+
+        <!-- Contact quick info -->
+        <div>
+          <h4 class="text-xs font-semibold tracking-[0.15em] uppercase text-stone-300 mb-5">Contact</h4>
+          <div class="space-y-3 text-sm text-stone-400/90">
+            <p>123 Main Street<br/>Salt Lake City, UT 84101</p>
+            <a href="tel:+18015550123" class="block text-amber-500 hover:text-amber-400 transition-colors font-medium">(801) 555-0123</a>
           </div>
         </div>
       </div>
-      <div class="border-t border-stone-800 pt-8 text-center text-sm">
-        <p>&copy; 2026 The Craft Table. All rights reserved.</p>
+
+      <!-- Bottom bar -->
+      <div class="border-t border-stone-800/80 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <p class="text-xs text-stone-500">&copy; 2026 The Craft Table. All rights reserved.</p>
+        <p class="text-xs text-stone-600">Crafted with care in Salt Lake City</p>
       </div>
     </div>
   </footer>
